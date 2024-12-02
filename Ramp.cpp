@@ -46,6 +46,10 @@ void Ramp::setValue(float value)
 	increment_ = 0;
 	counter_ = 0;
 }
+
+void Ramp::reset(float value) {
+    currentValue_ = value;
+}
 	
 // Ramp to a value over a period of time
 void Ramp::rampTo(float value, float time)

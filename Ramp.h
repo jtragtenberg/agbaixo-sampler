@@ -38,6 +38,14 @@ public:
 	// Return whether the ramp is finished
 	bool finished();
 	
+	void reset(float value);
+    
+    // Get the current level
+    float currentLevel() const { 
+    	return currentValue_; 
+    	
+    }
+	
 	// Destructor
 	~Ramp();
 

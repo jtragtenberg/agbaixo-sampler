@@ -37,6 +37,10 @@ void ADSR::setSampleRate(float rate)
 // Start the envelope, going to the Attack state
 void ADSR::trigger() 
 {
+	// Reset the ramp value to zero
+	// ramp_.reset(0.0);
+	ramp_.rampTo(0.0, 0.0001);
+	
 	// Go to the Attack state from whichever state we were in
 	state_ = StateAttack;
 	ramp_.rampTo(1.0, attackTime_);
