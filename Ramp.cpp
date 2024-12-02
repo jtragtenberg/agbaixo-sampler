@@ -51,7 +51,7 @@ void Ramp::setValue(float value)
 void Ramp::rampTo(float value, float time)
 {
 	// Calculate the increment to get from the current value to the target
-	// in the specified amount of time
+	// in thre specified amount of time
 	increment_ = (value - currentValue_) / (sampleRate_ * time);
 	counter_ = (int)(sampleRate_ * time);
 }
@@ -73,6 +73,14 @@ bool Ramp::finished()
 	// The ramp is finished when the counter has counted down to 0
 	return (counter_ == 0);
 }	
+
+// Reset the ramp
+void Ramp::reset()
+{
+    currentValue_ = 0;
+    counter_ = 0;
+    increment_ = 0;
+}
 
 // Destructor
 Ramp::~Ramp()

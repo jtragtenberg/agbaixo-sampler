@@ -38,6 +38,9 @@ public:
 	// Return whether the ramp is finished
 	bool finished();
 	
+	// Reset the ramp
+	void reset();
+	
 	// Destructor
 	~Ramp();
 

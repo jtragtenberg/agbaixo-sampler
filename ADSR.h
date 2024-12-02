@@ -43,6 +43,9 @@ public:
 	// Stop the envelope, going to the Release state
 	void release();
 	
+	// Reset the envelope to its initial state
+	void reset();
+	
 	// Calculate the next sample of output, changing the envelope
 	// state as needed
 	float process(); 
