@@ -14,6 +14,7 @@ C++ Real-Time Audio Programming with Bela - Lecture 16: MIDI part 2
 
 #include "ADSR.h"
 
+
 // Constructor. Set up some default parameters.
 // We can also use initialisation lists before the 
 // start of the curly braces to set these values
@@ -47,13 +48,6 @@ void ADSR::release()
 	// Go to the Release state from whichever state we were in
 	state_ = StateRelease;
 	ramp_.rampTo(0.0, releaseTime_);
-}
-
-// Reset the envelope to its initial state
-void ADSR::reset() 
-{
-	state_ = StateOff;
-	ramp_.reset();
 }
 
 // Calculate the next sample of output, changing the envelope
